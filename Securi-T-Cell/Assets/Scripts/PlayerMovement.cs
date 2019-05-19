@@ -20,18 +20,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input_direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.W))
-            input_direction += new Vector2(0, 1);
-        if (Input.GetKey(KeyCode.S))
-            input_direction += new Vector2(0, -1);
-        if (Input.GetKey(KeyCode.D))
-            input_direction += new Vector2(1, 0);
-        if (Input.GetKey(KeyCode.A))
-            input_direction += new Vector2(-1, 0);
-        Vector3 current_direction = m_rigidbody2D.velocity;
-        current_direction.Normalize();
-        input_direction.Normalize();
+        input_direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Vector3 current_direction = m_rigidbody2D.velocity.normalized;
+
         if (input_direction != Vector2.zero)
         {
             //Creates a value between -1 and 1, plus the response offset, higher values will result when the input direction is closer to the current direction
@@ -42,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-      
             m_rigidbody2D.velocity = Vector3.Lerp(m_rigidbody2D.velocity, input_direction * player_speed, stopping_responsiveness * Time.deltaTime);
         }
   
