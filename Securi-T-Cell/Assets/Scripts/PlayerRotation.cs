@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
     private Vector2 input_direction;
+    public bool aiming { get; private set; } = false;
 
     // Update is called once per frame
     void Update()
     {
+        aiming = false;
         if (Input.GetMouseButton(0)) faceMouse();
         faceAxis();
     }
@@ -26,12 +28,18 @@ public class PlayerRotation : MonoBehaviour
                 );
 
             transform.up = direction;
+            aiming = true;
         }
     }
 
     void faceAxis()
     {
         input_direction = new Vector2(Input.GetAxisRaw("Horizontal2"), Input.GetAxisRaw("Vertical2"));
-        if (input_direction != Vector2.zero) transform.up = input_direction;
+
+        if (input_direction != Vector2.zero)
+        {
+            transform.up = input_direction;
+            aiming = true;
+        }
     }
 }
