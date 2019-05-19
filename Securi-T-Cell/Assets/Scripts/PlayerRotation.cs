@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
+    private Vector2 input_direction;
+
     // Update is called once per frame
     void Update()
     {
-        faceMouse();
+        if (Input.GetMouseButton(0)) faceMouse();
+        faceAxis();
     }
 
     void faceMouse()
@@ -24,5 +27,11 @@ public class PlayerRotation : MonoBehaviour
 
             transform.up = direction;
         }
+    }
+
+    void faceAxis()
+    {
+        input_direction = new Vector2(Input.GetAxisRaw("Horizontal2"), Input.GetAxisRaw("Vertical2"));
+        if (input_direction != Vector2.zero) transform.up = input_direction;
     }
 }
