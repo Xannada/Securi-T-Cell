@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    private Rigidbody2D m_rigidbody2D;
+    private Rigidbody m_rigidbody;
     private PlayerRotation m_playerRotation;
 
     [SerializeField] protected float cooldown = 1;
-    [SerializeField] protected Rigidbody2D projectile;
+    [SerializeField] protected Rigidbody projectile;
     [SerializeField] protected string[] traits;
 
     private float timer;
@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_rigidbody2D = this.GetComponent<Rigidbody2D>();
+        m_rigidbody = this.GetComponent<Rigidbody>();
         m_playerRotation = this.GetComponent<PlayerRotation>();
         timer = cooldown;
     }
@@ -28,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (timer >= cooldown && m_playerRotation.aiming)
         {
-            Rigidbody2D bullet = Instantiate(projectile, transform.position, transform.rotation);
+            Rigidbody bullet = Instantiate(projectile, transform.position, transform.rotation);
             foreach (string trait in traits)
             {
                 bullet.gameObject.AddComponent(System.Type.GetType(trait));

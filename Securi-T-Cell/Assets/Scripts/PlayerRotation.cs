@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-    private Vector2 input_direction;
+    private Vector3 input_direction;
     public bool aiming { get; private set; } = false;
 
     // Update is called once per frame
@@ -22,21 +22,21 @@ public class PlayerRotation : MonoBehaviour
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            Vector2 direction = new Vector2(
-                mousePosition.x - transform.position.x,
-                mousePosition.y - transform.position.y
+            Vector3 direction = new Vector3(
+                mousePosition.x - transform.position.x, 0,
+                mousePosition.z - transform.position.z
                 );
-
-            transform.up = direction;
+            
+            transform.forward = direction;
             aiming = true;
         }
     }
 
     void faceAxis()
     {
-        input_direction = new Vector2(Input.GetAxisRaw("Horizontal2"), Input.GetAxisRaw("Vertical2"));
+        input_direction = new Vector3(Input.GetAxisRaw("Horizontal2"), 0, Input.GetAxisRaw("Vertical2"));
 
-        if (input_direction != Vector2.zero)
+        if (input_direction != Vector3.zero)
         {
             transform.up = input_direction;
             aiming = true;

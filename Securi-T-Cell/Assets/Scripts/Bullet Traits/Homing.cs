@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Homing : MonoBehaviour
 {
-    private Rigidbody2D m_rigidbody2D;
+    private Rigidbody m_rigidbody;
 
     [SerializeField] protected float range = 500;
     [SerializeField] protected float tracking = 0.05f;
@@ -13,9 +13,9 @@ public class Homing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_rigidbody2D = this.GetComponent<Rigidbody2D>();
-        GetComponent<SpriteRenderer>().color = Color.green;
-        m_rigidbody2D.velocity = transform.up * maxVelocity;
+        m_rigidbody = this.GetComponent<Rigidbody>();
+        //GetComponent<SpriteRenderer>().color = Color.green;
+        m_rigidbody.velocity = transform.up * maxVelocity;
     }
 
     // Update is called once per frame
@@ -26,12 +26,13 @@ public class Homing : MonoBehaviour
         GameObject closest = null;
         foreach (GameObject enemy in enemies)
         {
-            Vector2 vectorToEnemy = enemy.transform.position - transform.position;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, vectorToEnemy);
-            Debug.DrawRay(transform.position, vectorToEnemy);
-            Debug.Log(hit.collider.name);
+            Vector3 vectorToEnemy = enemy.transform.position - transform.position;
+            RaycastHit hit; 
+            bool didhit = Physics.Raycast(transform.position, vectorToEnemy, out hit);
+  //          Debug.DrawRay(transform.position, vectorToEnemy);
+//            Debug.Log(hit.collider.name);
 
-            if (hit && hit.collider.gameObject.Equals(enemy)) // In line of sight
+            if (didhit && hit.collider.gameObject.Equals(enemy)) // In line of sight
             {
                 float distance = Vector3.Distance(enemy.transform.position, transform.position);
 
@@ -43,9 +44,9 @@ public class Homing : MonoBehaviour
         }
 
         // Move towards closest enemy
-        if (closest != null) m_rigidbody2D.velocity = Vector2.Lerp(m_rigidbody2D.velocity.normalized, closest.transform.position - transform.position, tracking);
+        if (closest != null) m_rigidbody.velocity = Vector3.Lerp(m_rigidbody.velocity.normalized, closest.transform.position - transform.position, tracking);
 
         // Check max velocity
-        m_rigidbody2D.velocity = m_rigidbody2D.velocity.normalized * Mathf.Max(m_rigidbody2D.velocity.magnitude, maxVelocity);
+        m_rigidbody.velocity = m_rigidbody.velocity.normalized * Mathf.Max(m_rigidbody.velocity.magnitude, maxVelocity);
     }
 }
