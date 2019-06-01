@@ -16,6 +16,9 @@ public class ProjStats : MonoBehaviour
             Destroy(wound.GetComponent<ProjStats>());
             Destroy(gameObject);
         }
-        else if (!(other.CompareTag("Player") || other.CompareTag("Projectile"))) Destroy(gameObject);
+        else if (!(other.CompareTag("Player") || other.CompareTag("Projectile"))) 
+        {   
+            Destroy(gameObject);
+        }
     }
 }

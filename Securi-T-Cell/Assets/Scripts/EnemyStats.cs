@@ -6,6 +6,8 @@ public class EnemyStats : MonoBehaviour
 {
     public float health { private set; get; } = 5;
 
+    public bool readyToDie = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,13 @@ public class EnemyStats : MonoBehaviour
     // Update is called once per frame
     public void Damage(float damage)
     {
-        if (health > damage) health -= damage;
-        else Destroy(gameObject);
+        if (health > damage) 
+        {
+            health -= damage;
+        }
+        else 
+        {
+            readyToDie = true;
+        }
     }
 }
