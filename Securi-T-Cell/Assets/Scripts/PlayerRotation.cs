@@ -38,7 +38,7 @@ public class PlayerRotation : MonoBehaviour
 
         if (input_direction != Vector3.zero)
         {
-            transform.up = input_direction;
+            transform.forward = input_direction;
             aiming = true;
         }
     }

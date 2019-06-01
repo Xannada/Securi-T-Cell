@@ -34,7 +34,7 @@ public class PlayerShooting : MonoBehaviour
                 bullet.gameObject.AddComponent(System.Type.GetType(trait));
             }
 
-            bullet.velocity = transform.up; // Temporary speed setter
+            bullet.velocity = transform.forward; // Temporary speed setter
             timer = 0;
         }
     }

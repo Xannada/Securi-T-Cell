@@ -15,7 +15,6 @@ public class Homing : MonoBehaviour
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
         //GetComponent<SpriteRenderer>().color = Color.green;
-        m_rigidbody.velocity = transform.up * maxVelocity;
     }
 
     // Update is called once per frame
