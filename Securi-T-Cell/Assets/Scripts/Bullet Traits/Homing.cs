@@ -21,7 +21,6 @@ public class Homing : MonoBehaviour
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log(enemies.Length);
         GameObject closest = null;
         foreach (GameObject enemy in enemies)
         {

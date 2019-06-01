@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2543092672728610606}
   - component: {fileID: 2543092672728610605}
   - component: {fileID: 2543092672728610602}
+  - component: {fileID: 5225101090226118389}
   m_Layer: 0
   m_Name: Enemy2D
   m_TagString: Enemy
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a899714ade018644979c275c25dea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5225101090226118389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543092672728610604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932be157fcee92144bc90b3ee54f2977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6433295215509630848
