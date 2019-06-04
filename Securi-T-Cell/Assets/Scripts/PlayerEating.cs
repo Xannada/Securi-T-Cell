@@ -64,7 +64,6 @@ public class PlayerEating : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("Collision");
         if (col.transform.CompareTag("Enemy"))
         {
             EnemyStats target = col.transform.GetComponent<EnemyStats>();
