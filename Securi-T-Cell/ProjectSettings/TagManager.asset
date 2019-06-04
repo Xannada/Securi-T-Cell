@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Projectile
   - Current
+  - Ally
   layers:
   - Default
   - TransparentFX

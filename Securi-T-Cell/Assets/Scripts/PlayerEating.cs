@@ -14,6 +14,7 @@ public class PlayerEating : MonoBehaviour
     private float currScale;
 
     private float timer;
+    private GameObject digesting = null;
 
     void Start()
     {
@@ -48,9 +49,11 @@ public class PlayerEating : MonoBehaviour
 
     void SetScale(float value = 0)
     {
-        if (value < minScale)
+        if (value <= minScale)
         {
             value = minScale;
+            Destroy(digesting);
+            digesting = null;
         }
         if (value > maxScale)
         {
@@ -60,6 +63,7 @@ public class PlayerEating : MonoBehaviour
         currScale = value;
 
         transform.localScale = new Vector3(value, 1, value);
+        if (digesting && value != 0) digesting.transform.localScale = new Vector3(1 / value, 1, 1 / value);
     }
 
     void OnCollisionEnter(Collision col)
@@ -68,17 +72,21 @@ public class PlayerEating : MonoBehaviour
         {
             EnemyStats target = col.transform.GetComponent<EnemyStats>();
 
-            if (target.readyToDie)
+            if (!digesting && target.readyToDie)
             {
-                
-                {
+                if (!target.large)
+                { 
+                    
+                    digesting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
+                    digesting.GetComponentInChildren<SpriteRenderer>().color = target.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
+                    digesting.transform.localPosition = Vector3.zero;
+                    Eat();
                     Destroy(col.transform.gameObject);
-                    if (!target.large) Eat();
-                    else
-                    {
-                        Instantiate(Resources.Load("Chunks"), target.transform.position, Quaternion.identity);
-                        Destroy(col.transform.gameObject);
-                    }
+                }
+                else
+                {
+                    Instantiate(Resources.Load("Chunks"), target.transform.position, Quaternion.identity);
+                    Destroy(col.transform.gameObject);
                 }
             }
         }
