@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerEating : MonoBehaviour
 {
@@ -65,10 +66,20 @@ public class PlayerEating : MonoBehaviour
     {
         if (col.transform.CompareTag("Enemy"))
         {
-            if (col.transform.GetComponent<EnemyStats>().readyToDie)
+            EnemyStats target = col.transform.GetComponent<EnemyStats>();
+
+            if (target.readyToDie)
             {
-                Destroy(col.transform.gameObject);
-                Eat();
+                
+                {
+                    Destroy(col.transform.gameObject);
+                    if (!target.large) Eat();
+                    else
+                    {
+                        Instantiate(Resources.Load("Chunks"), target.transform.position, Quaternion.identity);
+                        Destroy(col.transform.gameObject);
+                    }
+                }
             }
         }
     }
