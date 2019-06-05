@@ -19,6 +19,7 @@ public class ForceRegion : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
+       
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
         
         rb.AddForce(transform.up * force_Strength);
