@@ -46,7 +46,7 @@ public class EnemyStats : MonoBehaviour
             renderer.color = Color.Lerp(renderer.color, Color.gray, .025f);
             yield return null;
         }
-        Destroy(this.gameObject);//TEMP, I broke eating so this was needed to delete dead bodies
+        //Destroy(this.gameObject);//TEMP, I broke eating so this was needed to delete dead bodies
     }
 
 
