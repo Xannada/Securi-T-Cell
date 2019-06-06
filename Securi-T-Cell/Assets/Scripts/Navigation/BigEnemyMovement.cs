@@ -13,7 +13,7 @@ public class BigEnemyMovement : MonoBehaviour
     public float eatTime = 5;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         nma = GetComponent<NavMeshAgent>();
     }
@@ -31,6 +31,8 @@ public class BigEnemyMovement : MonoBehaviour
                 nma.isStopped = false;
                 timer = 0;
                 Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity);
+                GetComponent<EnemyIdle>().enabled = true;
+                this.enabled = false;
             }
         }
         else
