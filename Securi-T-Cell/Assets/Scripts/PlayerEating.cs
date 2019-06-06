@@ -79,7 +79,7 @@ public class PlayerEating : MonoBehaviour
                     
                     digesting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
                     digesting.GetComponentInChildren<SpriteRenderer>().color = target.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
-                    digesting.transform.localPosition = Vector3.zero;
+                    digesting.transform.localPosition = Vector3.up * 2;
                     Eat();
                     Destroy(col.transform.gameObject);
                 }
