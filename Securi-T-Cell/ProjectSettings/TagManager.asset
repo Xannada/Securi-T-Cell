@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Current
   - Ally
+  - Nexus
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6151407085866514686}
   m_Layer: 0
   m_Name: RBC Nexus
-  m_TagString: Untagged
+  m_TagString: Nexus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleExits:
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!135 &6151407085866514686
 SphereCollider:
