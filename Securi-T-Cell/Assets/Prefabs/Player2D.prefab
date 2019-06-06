@@ -4903,6 +4903,12 @@ PrefabInstance:
       propertyPath: m_Height
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1807651663685752079, guid: e2acb8741ab90ce448ec114772795f0f,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 8245265547379525305, guid: fc8795ad11f203b42ba58d053b5eb256,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2acb8741ab90ce448ec114772795f0f, type: 3}
 --- !u!1 &7195955519493863317 stripped
