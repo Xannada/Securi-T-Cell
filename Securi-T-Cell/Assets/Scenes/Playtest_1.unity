@@ -1590,14 +1590,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 346006826}
+      objectReference: {fileID: 377371661}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 377371661}
+      objectReference: {fileID: 346006826}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 346006826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &100432567 stripped
@@ -4415,14 +4425,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 100432567}
+      objectReference: {fileID: 1380809757}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 1380809757}
+      objectReference: {fileID: 100432567}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 100432567}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &491879830 stripped
@@ -5950,14 +5970,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 888222503}
+      objectReference: {fileID: 1386535886}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 1386535886}
+      objectReference: {fileID: 888222503}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 888222503}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[3]
+      value: 
+      objectReference: {fileID: 888222503}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &664222632 stripped
@@ -7229,14 +7264,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 725978575}
+      objectReference: {fileID: 720111232}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 720111232}
+      objectReference: {fileID: 725978575}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 725978575}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &774848082 stripped
@@ -7746,14 +7791,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 1351683149}
+      objectReference: {fileID: 1939704942}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 1939704942}
+      objectReference: {fileID: 1351683149}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 1351683149}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[3]
+      value: 
+      objectReference: {fileID: 1351683149}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &856685126 stripped
@@ -8113,14 +8173,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 491879830}
+      objectReference: {fileID: 1452358898}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 1452358898}
+      objectReference: {fileID: 491879830}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 491879830}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[3]
+      value: 
+      objectReference: {fileID: 491879830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &888222503 stripped
@@ -11913,14 +11988,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
+      propertyPath: possibleExits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
       propertyPath: possibleExits.Array.data[0]
       value: 
-      objectReference: {fileID: 774848082}
+      objectReference: {fileID: 36823638}
     - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
         type: 3}
       propertyPath: possibleExits.Array.data[1]
       value: 
-      objectReference: {fileID: 36823638}
+      objectReference: {fileID: 774848082}
+    - target: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,
+        type: 3}
+      propertyPath: possibleExits.Array.data[2]
+      value: 
+      objectReference: {fileID: 774848082}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8101162a1b8b546b13bb02b4d94c53, type: 3}
 --- !u!114 &1351683149 stripped
