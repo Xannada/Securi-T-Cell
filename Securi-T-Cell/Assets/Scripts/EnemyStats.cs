@@ -42,11 +42,10 @@ public class EnemyStats : MonoBehaviour
     {
         for (float t = 0; t < 150; t++)
         {
-            Debug.Log("Changing" + renderer.color + " to " + Color.Lerp(renderer.color, Color.gray, .01f));
+            //Debug.Log("Changing" + renderer.color + " to " + Color.Lerp(renderer.color, Color.gray, .01f));
             renderer.color = Color.Lerp(renderer.color, Color.gray, .025f);
             yield return null;
         }
-        //Destroy(this.gameObject);//TEMP, I broke eating so this was needed to delete dead bodies
     }
 
 

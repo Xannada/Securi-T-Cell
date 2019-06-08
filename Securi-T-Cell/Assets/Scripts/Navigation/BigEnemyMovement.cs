@@ -8,6 +8,7 @@ public class BigEnemyMovement : MonoBehaviour
 {
     private NavMeshAgent nma;
     private GameObject player;
+    private GameObject EnemyParentInScene;
     private GameObject infecting = null;
     private float timer = 0;
     public float eatTime = 5;
@@ -16,6 +17,7 @@ public class BigEnemyMovement : MonoBehaviour
     void Start()
     {
         nma = GetComponent<NavMeshAgent>();
+        EnemyParentInScene = GameObject.Find("Enemies");
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class BigEnemyMovement : MonoBehaviour
                 infecting = null;
                 nma.isStopped = false;
                 timer = 0;
-                Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity);
+                Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity, EnemyParentInScene.transform);
                 GetComponent<EnemyIdle>().enabled = true;
                 this.enabled = false;
             }
@@ -60,7 +62,8 @@ public class BigEnemyMovement : MonoBehaviour
         {
             if (!infecting)
             {
-                infecting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
+                //This is respawning a new RBC when this big enemy dies
+                infecting = Instantiate(Resources.Load("GenericCell")) as GameObject;
                 infecting.GetComponentInChildren<SpriteRenderer>().color = col.collider.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
                 infecting.transform.localPosition = Vector3.up;
                 nma.isStopped = true;
