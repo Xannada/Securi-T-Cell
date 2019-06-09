@@ -28,7 +28,10 @@ public class BigEnemyMovement : MonoBehaviour
         {
             Instantiate(Resources.Load("BloodCell"), transform.position, Quaternion.identity); // If destroyed while infecting
         }
-        Instantiate(Resources.Load("BloodCell"));
+        Transform nexi = GameObject.Find("RBCNexi").transform;
+        int randomNexus = Random.Range(0, nexi.childCount);
+        Vector3 spawnPos = nexi.GetChild(randomNexus).transform.position;
+        Instantiate(Resources.Load("BloodCell"), spawnPos, Quaternion.identity);
     }
 
     // Update is called once per frame
