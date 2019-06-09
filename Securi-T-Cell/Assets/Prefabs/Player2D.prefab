@@ -64,10 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90d76b2c90a4e140b42b21ff5839a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_speed: 30
+  player_speed: 25
   direction_responsiveness: 1.5
-  stopping_responsiveness: 1
-  response_offset: 1.5
+  stopping_responsiveness: 1.1
+  response_offset: 1.25
   stunned: 0
 --- !u!114 &4664400397470130889
 MonoBehaviour:
@@ -4907,11 +4907,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7195955519493863403}
     m_Modifications:
-    - target: {fileID: 7382812287301004515, guid: ef5602afa40399f4d8d74bba9760d456,
-        type: 3}
-      propertyPath: m_Name
-      value: GenericCell
-      objectReference: {fileID: 0}
     - target: {fileID: 7382812287301004518, guid: ef5602afa40399f4d8d74bba9760d456,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4981,6 +4976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382812287301004515, guid: ef5602afa40399f4d8d74bba9760d456,
+        type: 3}
+      propertyPath: m_Name
+      value: GenericCell
       objectReference: {fileID: 0}
     - target: {fileID: 1406059737286877208, guid: ef5602afa40399f4d8d74bba9760d456,
         type: 3}
