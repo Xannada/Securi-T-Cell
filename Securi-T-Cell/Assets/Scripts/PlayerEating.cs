@@ -85,6 +85,7 @@ public class PlayerEating : MonoBehaviour
                 }
                 else
                 {
+                    target.GetComponent<BigEnemyMovement>().respawn();
                     Instantiate(Resources.Load("Chunks"), target.transform.position, Quaternion.identity);
                     Destroy(col.transform.gameObject);
                 }

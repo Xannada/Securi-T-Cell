@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class BigEnemyMovement : MonoBehaviour
 {
     private NavMeshAgent nma;
+    private EnemyStats stats;
     private GameObject player;
     private GameObject EnemyParentInScene;
     private GameObject infecting = null;
@@ -17,12 +18,24 @@ public class BigEnemyMovement : MonoBehaviour
     void Start()
     {
         nma = GetComponent<NavMeshAgent>();
+        stats = GetComponent<EnemyStats>();
         EnemyParentInScene = GameObject.Find("Enemies");
+    }
+
+    public void respawn()
+    {
+        if (infecting)
+        {
+            Instantiate(Resources.Load("BloodCell"), transform.position, Quaternion.identity); // If destroyed while infecting
+        }
+        Instantiate(Resources.Load("BloodCell"));
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (stats.readyToDie) this.enabled = false;
+
         if (infecting)
         {
             timer += Time.deltaTime;
@@ -62,8 +75,7 @@ public class BigEnemyMovement : MonoBehaviour
         {
             if (!infecting)
             {
-                //This is respawning a new RBC when this big enemy dies
-                infecting = Instantiate(Resources.Load("GenericCell")) as GameObject;
+                infecting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
                 infecting.GetComponentInChildren<SpriteRenderer>().color = col.collider.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
                 infecting.transform.localPosition = Vector3.up;
                 nma.isStopped = true;
