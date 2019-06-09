@@ -79,7 +79,7 @@ public class BigEnemyMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.transform.CompareTag("Ally"))
+        if (this.enabled && col.transform.CompareTag("Ally"))
         {
             if (!infecting)
             {
