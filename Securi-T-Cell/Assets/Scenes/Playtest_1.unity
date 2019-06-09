@@ -19340,15 +19340,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+    - target: {fileID: 7195955519493863405, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
-      propertyPath: cooldown
-      value: 0.1
+      propertyPath: player_speed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 204862264530070024, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
       propertyPath: prewarm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}

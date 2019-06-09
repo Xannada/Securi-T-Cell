@@ -90,6 +90,10 @@ public class PlayerEating : MonoBehaviour
                     Destroy(col.transform.gameObject);
                 }
             }
+            if (!target.readyToDie)
+            {
+                GetComponent<PlayerMovement>().Stun();
+            }
         }
     }
 }
