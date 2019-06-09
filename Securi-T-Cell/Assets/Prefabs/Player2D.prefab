@@ -64,10 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90d76b2c90a4e140b42b21ff5839a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_speed: 10
+  player_speed: 30
   direction_responsiveness: 1.5
   stopping_responsiveness: 1
   response_offset: 1.5
+  stunned: 0
 --- !u!114 &4664400397470130889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -4980,11 +4981,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1406059737286877208, guid: ef5602afa40399f4d8d74bba9760d456,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1406059737286877208, guid: ef5602afa40399f4d8d74bba9760d456,
         type: 3}
