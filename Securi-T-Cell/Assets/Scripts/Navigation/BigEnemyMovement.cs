@@ -28,10 +28,14 @@ public class BigEnemyMovement : MonoBehaviour
         {
             Instantiate(Resources.Load("BloodCell"), transform.position, Quaternion.identity); // If destroyed while infecting
         }
-        Transform nexi = GameObject.Find("RBCNexi").transform;
-        int randomNexus = Random.Range(0, nexi.childCount);
-        Vector3 spawnPos = nexi.GetChild(randomNexus).transform.position;
-        Instantiate(Resources.Load("BloodCell"), spawnPos, Quaternion.identity);
+        GameObject nexi = GameObject.Find("RBCNexi");
+        if (nexi)
+        {
+            int randomNexus = Random.Range(0, nexi.transform.childCount);
+            Vector3 spawnPos = nexi.transform.GetChild(randomNexus).transform.position;
+            Instantiate(Resources.Load("BloodCell"), spawnPos, Quaternion.identity);
+        }
+        else Instantiate(Resources.Load("BloodCell"));
     }
 
     // Update is called once per frame
@@ -48,7 +52,8 @@ public class BigEnemyMovement : MonoBehaviour
                 infecting = null;
                 nma.isStopped = false;
                 timer = 0;
-                Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity, EnemyParentInScene.transform);
+                if (EnemyParentInScene) Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity, EnemyParentInScene.transform);
+                else Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity);
                 GetComponent<EnemyIdle>().enabled = true;
                 this.enabled = false;
             }
