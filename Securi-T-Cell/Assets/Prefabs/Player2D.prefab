@@ -83,6 +83,8 @@ MonoBehaviour:
     type: 3}
   traits:
   - Splitting
+  - Homing
+  - Bouncing
 --- !u!114 &7195955519493863405
 MonoBehaviour:
   m_ObjectHideFlags: 0

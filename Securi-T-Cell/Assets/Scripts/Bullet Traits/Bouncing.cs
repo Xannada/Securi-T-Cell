@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bounce : MonoBehaviour
+public class Bouncing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
     private Rigidbody m_player;
