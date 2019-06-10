@@ -39,4 +39,9 @@ public class PlayerShooting : MonoBehaviour
             timer = 0;
         }
     }
+
+    public float getProjSpeed()
+    {
+        return projSpeed;
+    }
 }
