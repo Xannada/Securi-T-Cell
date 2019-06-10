@@ -681,6 +681,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8275703489142937894, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[0]
+      value: Splitting
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[1]
+      value: Homing
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}
 --- !u!1001 &1106267162
