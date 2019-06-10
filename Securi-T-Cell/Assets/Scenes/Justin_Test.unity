@@ -703,8 +703,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
+      propertyPath: traits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
       propertyPath: traits.Array.data[0]
       value: Bounce
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[1]
+      value: Splitting
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[2]
+      value: Homing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}
