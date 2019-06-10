@@ -79,13 +79,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  projSpeed: 5
+  projSpeed: 15
   projectile: {fileID: 8245265547379525305, guid: fc8795ad11f203b42ba58d053b5eb256,
     type: 3}
   traits:
+  - Bouncing
   - Splitting
   - Homing
-  - Bouncing
 --- !u!114 &7195955519493863405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4885,7 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8772986323bfc36469d67bace03d6c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptForce: 1
+  forceRatio: 1
 --- !u!1001 &2372872746605239630
 PrefabInstance:
   m_ObjectHideFlags: 0

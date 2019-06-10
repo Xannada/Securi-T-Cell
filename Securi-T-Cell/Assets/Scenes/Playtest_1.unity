@@ -4304,6 +4304,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feaff0d8b39992143b3ab0b438a71de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &411853404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 894210252742642987, guid: 05d48a69f155a324ba1081e1a38b80de,
+    type: 3}
+  m_PrefabInstance: {fileID: 1816749451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &411853405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411853404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f44691ef6e906429b5ff545208fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2543092672728610604, guid: 30fca3261fb52d64b935b10ab7ea096e, type: 3}
 --- !u!4 &412866178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1502748883956964156, guid: 5ae6797c20470284dafe8d4476ad68ac,
@@ -19631,6 +19650,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[3]
+      value: Enlarging
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[4]
+      value: MaintainSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[5]
+      value: Bouncing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}

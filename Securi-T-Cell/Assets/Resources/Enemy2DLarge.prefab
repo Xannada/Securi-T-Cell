@@ -55,6 +55,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &6542496393190214269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894210252742642987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f44691ef6e906429b5ff545208fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2543092672728610604, guid: 30fca3261fb52d64b935b10ab7ea096e, type: 3}
 --- !u!1001 &3396345459531315719
 PrefabInstance:
   m_ObjectHideFlags: 0
