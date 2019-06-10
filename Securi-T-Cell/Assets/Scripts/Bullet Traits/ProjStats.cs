@@ -5,7 +5,21 @@ using UnityEngine;
 public class ProjStats : MonoBehaviour
 {
     float damage = 1f;
+    private float minSpeed;
+    private Rigidbody m_rigidbody;
 
+    void Start()
+    {
+        m_rigidbody = this.GetComponent<Rigidbody>();
+        minSpeed = FindObjectOfType<PlayerShooting>().getMinSpeed();
+    }
+    private void Update()
+    {
+        if (m_rigidbody.velocity.magnitude < minSpeed)
+        {
+            m_rigidbody.velocity = m_rigidbody.velocity.normalized * minSpeed;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

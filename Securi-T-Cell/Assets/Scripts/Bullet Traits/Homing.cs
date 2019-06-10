@@ -40,11 +40,11 @@ public class Homing : MonoBehaviour
             }
         }
 
-        // Move towards closest enemy
+        // Aim towards closest enemy
         if (closest != null)
         {
-            transform.forward = Vector3.Lerp(m_rigidbody.velocity.normalized, (closest.transform.position - transform.position).normalized, tracking).normalized;
+            transform.forward = Vector3.Lerp(transform.forward, (closest.transform.position - transform.position).normalized, tracking + 5*Time.deltaTime).normalized;
             m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
-        }
+        } 
     }
 }
