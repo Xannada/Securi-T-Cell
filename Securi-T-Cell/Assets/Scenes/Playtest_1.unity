@@ -19653,6 +19653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
+      propertyPath: traits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
       propertyPath: traits.Array.data[3]
       value: Enlarging
       objectReference: {fileID: 0}
