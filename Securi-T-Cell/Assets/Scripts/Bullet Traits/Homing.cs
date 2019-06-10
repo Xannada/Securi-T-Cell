@@ -8,7 +8,6 @@ public class Homing : MonoBehaviour
 
     [SerializeField] protected float range = 500;
     [SerializeField] protected float tracking = 0.05f;
-    [SerializeField] protected float maxVelocity = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,9 +41,10 @@ public class Homing : MonoBehaviour
         }
 
         // Move towards closest enemy
-        if (closest != null) m_rigidbody.velocity = Vector3.Lerp(m_rigidbody.velocity.normalized, closest.transform.position - transform.position, tracking);
-
-        // Check max velocity
-        m_rigidbody.velocity = m_rigidbody.velocity.normalized * Mathf.Max(m_rigidbody.velocity.magnitude, maxVelocity);
+        if (closest != null)
+        {
+            transform.forward = Vector3.Lerp(m_rigidbody.velocity.normalized, (closest.transform.position - transform.position).normalized, tracking).normalized;
+            m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
+        }
     }
 }
