@@ -11,7 +11,8 @@ public class ProjStats : MonoBehaviour
     void Start()
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
-        minSpeed = FindObjectOfType<PlayerShooting>().getMinSpeed();
+        Vector3 startingVector = m_rigidbody.velocity.normalized * FindObjectOfType<PlayerShooting>().getMinSpeed() + FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody>().velocity*1.1f;
+        minSpeed = Mathf.Max(FindObjectOfType<PlayerShooting>().getMinSpeed(), startingVector.magnitude);
     }
     private void Update()
     {
