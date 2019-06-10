@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1807651663685752079}
   - component: {fileID: 4211003665402986577}
   - component: {fileID: 1807651663685752078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
   direction_responsiveness: 1.5
   stopping_responsiveness: 1
   response_offset: 1.5
+  stunned: 0
 --- !u!114 &1807651663685752180
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,4 +21,15 @@ public class ProjStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Enemy"))
+        {
+            other.collider.GetComponent<EnemyStats>().Damage(damage);
+            GameObject wound = Instantiate(gameObject, other.transform, true);
+            wound.GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(wound.GetComponent<ProjStats>());
+            Destroy(gameObject);
+        }
+    }
 }
