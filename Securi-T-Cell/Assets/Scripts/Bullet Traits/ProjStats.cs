@@ -27,6 +27,7 @@ public class ProjStats : MonoBehaviour
         {
             other.collider.GetComponent<EnemyStats>().Damage(damage);
             GameObject wound = Instantiate(gameObject, other.transform, true);
+            foreach (MonoBehaviour mb in wound.GetComponents<MonoBehaviour>()) mb.enabled = false;
             wound.GetComponent<Rigidbody>().isKinematic = true;
             Destroy(wound.GetComponent<ProjStats>());
             Destroy(gameObject);

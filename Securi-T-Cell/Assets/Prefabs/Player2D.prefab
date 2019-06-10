@@ -78,10 +78,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
+  projSpeed: 5
   projectile: {fileID: 8245265547379525305, guid: fc8795ad11f203b42ba58d053b5eb256,
     type: 3}
   traits:
-  - Homing
+  - Splitting
 --- !u!114 &7195955519493863405
 MonoBehaviour:
   m_ObjectHideFlags: 0
