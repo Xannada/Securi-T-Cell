@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemyIdle: MonoBehaviour
 {
     private NavMeshAgent nma;
-    private float idleTime = 10;
+    private float idleTime = 15;
     private float timer = 0;
     public RBCNexus target;
 
