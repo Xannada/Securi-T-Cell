@@ -5,7 +5,7 @@ using UnityEngine;
 public class Homing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
-
+    private float minSpeed;
     [SerializeField] protected float range = 500;
     [SerializeField] protected float tracking = 0.05f;
 
@@ -13,6 +13,7 @@ public class Homing : MonoBehaviour
     void Start()
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
+        minSpeed = FindObjectOfType<PlayerShooting>().getMinSpeed();
         //GetComponent<SpriteRenderer>().color = Color.green;
     }
 
@@ -45,6 +46,11 @@ public class Homing : MonoBehaviour
         {
             transform.forward = Vector3.Lerp(transform.forward, (closest.transform.position - transform.position).normalized, tracking + 5*Time.deltaTime).normalized;
             m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
-        } 
+        }
+
+        if (m_rigidbody.velocity.magnitude < minSpeed)
+        {
+            m_rigidbody.velocity = m_rigidbody.velocity.normalized * minSpeed;
+        }
     }
 }
