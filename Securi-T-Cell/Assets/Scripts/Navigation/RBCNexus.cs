@@ -24,5 +24,14 @@ public class RBCNexus : MonoBehaviour
                 RBC.SetTarget(GiveNextPath());
             }
         }
+        else 
+        {
+            EnemyIdle ei = col.transform.GetComponent<EnemyIdle>();
+
+            if (ei && ei.isActiveAndEnabled)
+            {
+                ei.SetTarget(GiveNextPath());
+            }
+        }
     }
 }

@@ -7,17 +7,29 @@ using UnityEngine.AI;
 public class EnemyIdle: MonoBehaviour
 {
     private NavMeshAgent nma;
-    private float idleTime = 20;
-    private float actionIntervals = 5;
+    private float idleTime = 10;
     private float timer = 0;
-    private float last = 0;
-    private bool moving = false;
-    public float wanderDistance = 100;
+    public RBCNexus target;
+
+    private ForceRegionAcceptor fra;
+
+    private float chaseSpeed;
 
     // Start is called before the first frame update
     void Awake()
     {
         nma = GetComponent<NavMeshAgent>();
+        fra = GetComponent<ForceRegionAcceptor>();
+
+        StartIdling();
+    }
+
+    public void StartIdling()
+    {
+        //GetComponent<Rigidbody>().isKinematic = false;
+        fra.forceRatio = 2;
+        chaseSpeed = nma.speed; //save the desired speed for later
+        nma.speed = 7;
     }
 
     // Update is called once per frame
@@ -28,28 +40,18 @@ public class EnemyIdle: MonoBehaviour
         if (timer >= idleTime)
         {
             timer = 0;
-            last = 0;
+            //GetComponent<Rigidbody>().isKinematic = true;
+            nma.speed = chaseSpeed;
             GetComponent<BigEnemyMovement>().enabled = true;
             this.enabled = false;
             nma.isStopped = false;
         }
-
-        else if (timer >= last + actionIntervals)
-        {
-            last += actionIntervals;
-            if (moving)
-            {
-                nma.isStopped = true;
-                moving = false;
-            }
-            else
-            {
-                nma.isStopped = false;
-                NavMeshHit navHit;
-                NavMesh.SamplePosition(transform.position + Random.insideUnitSphere * wanderDistance, out navHit, wanderDistance, -1);
-                nma.SetDestination(navHit.position);
-                moving = true;
-            }
-        }
+    }
+    
+    public void SetTarget(RBCNexus argTarget)
+    {
+        fra.forceRatio = .4f;
+        target = argTarget;
+        nma.SetDestination(target.transform.position);
     }
 }

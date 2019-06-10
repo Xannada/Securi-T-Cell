@@ -93,6 +93,11 @@ public class PlayerEating : MonoBehaviour
             if (!target.readyToDie)
             {
                 GetComponent<PlayerMovement>().Stun();
+
+                if (!target.large)
+                {
+                    Destroy(col.transform.gameObject);
+                }
             }
         }
     }

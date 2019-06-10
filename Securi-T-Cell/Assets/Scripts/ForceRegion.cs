@@ -6,25 +6,16 @@ public class ForceRegion : MonoBehaviour
 {
     [SerializeField] protected float force_Strength;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider collision)
     {
+
+        ForceRegionAcceptor fRA = collision.gameObject.GetComponent<ForceRegionAcceptor>();
+
+        if (!fRA)
+            return;
        
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
         
-        rb.AddForce(transform.up * force_Strength);
-        
-        
-        //Debug.Log("Stay");
+        rb.AddForce(transform.up * force_Strength * fRA.forceRatio);
     }
 }

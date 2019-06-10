@@ -55,6 +55,7 @@ public class BigEnemyMovement : MonoBehaviour
                 if (EnemyParentInScene) Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity, EnemyParentInScene.transform);
                 else Instantiate(Resources.Load("Enemy2DLarge"), transform.position, Quaternion.identity);
                 GetComponent<EnemyIdle>().enabled = true;
+                GetComponent<EnemyIdle>().StartIdling();
                 this.enabled = false;
             }
         }

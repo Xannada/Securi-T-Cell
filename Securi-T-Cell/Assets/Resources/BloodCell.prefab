@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1502748883956964161}
   - component: {fileID: 6336260048138621827}
   - component: {fileID: 6875553469990044800}
+  - component: {fileID: 9199960034510921911}
   m_Layer: 0
   m_Name: BloodCell
   m_TagString: Ally
@@ -57,8 +58,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502748883956964162}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 5
+  m_Mass: 0.1
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -88,7 +89,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 7
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1000
@@ -100,6 +101,19 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9199960034510921911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502748883956964162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8772986323bfc36469d67bace03d6c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceRatio: 2
 --- !u!1 &8577102530100719175
 GameObject:
   m_ObjectHideFlags: 0
