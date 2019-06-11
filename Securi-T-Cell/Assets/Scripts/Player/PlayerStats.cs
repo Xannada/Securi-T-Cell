@@ -105,8 +105,8 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
-        if (farthestNexus) transform.position = farthestNexus.transform.position;
-        else transform.position = Vector3.zero;
+        if (farthestNexus) transform.position = farthestNexus.transform.position + transform.up * 3 / 2;
+        else transform.position = Vector3.zero + transform.up * 5 / 2;
 
         health = initHealth;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
