@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] public static PlayerStats player { get; private set; }
+    public static PlayerStats player { get; private set; }
 
+    [Header("Current Stats")]
     [SerializeField] private float _health = 10;
     [SerializeField] private float _damage = 1;
     [SerializeField] private float _fireRate = 1;
     [SerializeField] private float _speed = 20;
-    [SerializeField] private string[] _traits;
-    
+    [SerializeField] private HashSet<string> _traits; //unique list
+
+    [Header("Levels")]
+    [SerializeField] private float _healthLevel= 1;
+    [SerializeField] private float _damageLevel = 1;
+    [SerializeField] private float _fireRateLevel = 1;
+    [SerializeField] private float _speedLevel = 1;
+
+    [Header("Upgrade Amounts")]
+    [SerializeField] private float _healthIncrease = 5;
+    [SerializeField] private float _damageIncrease = 1;
+    [SerializeField] private float _fireRateIncrease = 1;
+    [SerializeField] private float _speedIncrease = 5;
+
     public float health { get => _health; private set => _health = value; }
     public float damage { get => _damage; private set => _damage = value; }
     public float fireRate { get => _fireRate; private set => _fireRate = value; }
     public float speed { get => _speed; private set => _speed = value; }
-    public string[] traits { get => _traits; private set => _traits = value; }
+    public HashSet<string> traits { get => _traits; private set => _traits = value; }
+
+    public float healthLevel { get => _healthLevel; private set => _healthLevel = value; }
+    public float damageLevel { get => _damageLevel; private set => _damageLevel = value; }
+    public float fireRateLevel { get => _fireRateLevel; private set => _fireRateLevel = value; }
+    public float speedLevel { get => _speedLevel; private set => _speedLevel = value; }
 
     private float initHealth;
 
@@ -92,5 +110,40 @@ public class PlayerStats : MonoBehaviour
 
         health = initHealth;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    public bool hasTrait(string trait)
+    {
+        return traits.Contains(trait);
+    }
+
+    public bool addTrait(string trait)
+    {
+        return traits.Add(trait);
+    }
+
+    public void upgradeHealth()
+    {
+        health += _healthIncrease;
+        initHealth += _healthIncrease;
+        healthLevel++;
+    }
+
+    public void upgradeDamage()
+    {
+        damage += _damageIncrease;
+        damageLevel++;
+    }
+
+    public void upgradeFirerate()
+    {
+        fireRate += _fireRateIncrease;
+        fireRate++;
+    }
+
+    public void upgradeSpeed()
+    {
+        speed += speedLevel;
+        speedLevel++;
     }
 }
