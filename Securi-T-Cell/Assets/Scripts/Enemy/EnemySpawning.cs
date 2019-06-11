@@ -8,7 +8,7 @@ public class EnemySpawning : MonoBehaviour
     private static GameObject spawn;
     private float spawnTime = 10;
     private int spawnCount = 3;
-    private int spawnLimit = 300;
+    public static int spawnLimit = 300;
     public GameObject enemy;
 
     private void Awake()
