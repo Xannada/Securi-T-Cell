@@ -41,6 +41,12 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void Heal(float amount)
+    {
+        if (health + amount <= initHealth)
+            health += amount;
+    }
+
     private void Reset()
     {
         GameObject [] enemies = GameObject.FindGameObjectsWithTag("Enemy");

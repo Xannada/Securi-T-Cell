@@ -96,6 +96,7 @@ public class PlayerEating : MonoBehaviour
                         digesting.transform.localPosition = Vector3.up * 2;
                         Eat();
                         Destroy(col.transform.gameObject);
+                        PlayerStats.player.Heal(1);
                     }
                 }
                 else
