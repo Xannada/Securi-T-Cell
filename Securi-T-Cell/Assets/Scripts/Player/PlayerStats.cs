@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float _damage = 1;
     [SerializeField] private float _fireRate = 1;
     [SerializeField] private float _speed = 20;
-    [SerializeField] private HashSet<string> _traits; //unique list
+    [SerializeField] private List<string> _traits; //unique list 
 
     [Header("Levels")]
     [SerializeField] private float _healthLevel= 1;
@@ -22,14 +22,14 @@ public class PlayerStats : MonoBehaviour
     [Header("Upgrade Amounts")]
     [SerializeField] private float _healthIncrease = 5;
     [SerializeField] private float _damageIncrease = 1;
-    [SerializeField] private float _fireRateIncrease = 1;
+    [SerializeField] private float _fireRateIncrease = 1;   
     [SerializeField] private float _speedIncrease = 5;
 
     public float health { get => _health; private set => _health = value; }
     public float damage { get => _damage; private set => _damage = value; }
     public float fireRate { get => _fireRate; private set => _fireRate = value; }
     public float speed { get => _speed; private set => _speed = value; }
-    public HashSet<string> traits { get => _traits; private set => _traits = value; }
+    public List<string> traits { get => _traits; private set => _traits = value; }
 
     public float healthLevel { get => _healthLevel; private set => _healthLevel = value; }
     public float damageLevel { get => _damageLevel; private set => _damageLevel = value; }
@@ -117,9 +117,9 @@ public class PlayerStats : MonoBehaviour
         return traits.Contains(trait);
     }
 
-    public bool addTrait(string trait)
+    public void addTrait(string trait)
     {
-        return traits.Add(trait);
+        traits.Add(trait);
     }
 
     public void upgradeHealth()
@@ -143,7 +143,7 @@ public class PlayerStats : MonoBehaviour
 
     public void upgradeSpeed()
     {
-        speed += speedLevel;
+        speed += _speedIncrease;
         speedLevel++;
     }
 }
