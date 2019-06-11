@@ -12,7 +12,7 @@ public class EnemyMovementController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = PlayerStats.player.gameObject;
         nma = GetComponent<NavMeshAgent>();
     }
 

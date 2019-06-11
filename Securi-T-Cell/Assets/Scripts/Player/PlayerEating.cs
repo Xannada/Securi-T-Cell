@@ -8,6 +8,8 @@ public class PlayerEating : MonoBehaviour
     public float maxScale;
     public float minScale;
 
+    public float damage = 1;
+
     public float scaleIncreaseDelta;
     public float scaleDecreasePerSec;
 
@@ -114,6 +116,7 @@ public class PlayerEating : MonoBehaviour
                     ParticleSystem.MainModule setting = chunks.GetComponent<ParticleSystem>().main;
                     setting.startColor = Color.yellow;
                     body.startColor = Color.yellow;
+                    PlayerStats.player.Damage(damage);
                 }
             }
         }

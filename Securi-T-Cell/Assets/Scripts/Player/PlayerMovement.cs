@@ -7,11 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed
     {
         get {
-            return player_speed * (stunned? .25f : 1f);
-        }
+            return PlayerStats.player.speed * (stunned? .25f : 1f);
+        } 
     }
     private Rigidbody m_rigidbody;
-    [SerializeField] protected float player_speed;
     [SerializeField] protected float direction_responsiveness;
     [SerializeField] protected float stopping_responsiveness;
     [SerializeField] protected float response_offset; //Should always be set higher than 1

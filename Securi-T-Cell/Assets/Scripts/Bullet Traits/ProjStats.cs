@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ProjStats : MonoBehaviour
 {
-    static float damage = 1f;
     private Rigidbody m_rigidbody;
 
 
@@ -16,7 +15,7 @@ public class ProjStats : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyStats>().Damage(damage);
+            other.GetComponent<EnemyStats>().Damage(PlayerStats.player.damage);
             GameObject wound = Instantiate(gameObject, other.transform, true);
             foreach (MonoBehaviour mb in wound.GetComponents<MonoBehaviour>()) mb.enabled = false;
             wound.GetComponent<Rigidbody>().isKinematic = true;
@@ -32,7 +31,7 @@ public class ProjStats : MonoBehaviour
     {
         if (other.collider.CompareTag("Enemy"))
         {
-            other.collider.GetComponent<EnemyStats>().Damage(damage);
+            other.collider.GetComponent<EnemyStats>().Damage(PlayerStats.player.damage);
             GameObject wound = Instantiate(gameObject, other.transform, true);
             foreach (MonoBehaviour mb in wound.GetComponents<MonoBehaviour>()) mb.enabled = false;
             wound.GetComponent<Rigidbody>().isKinematic = true;

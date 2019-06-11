@@ -6,11 +6,9 @@ public class PlayerShooting : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
     private PlayerRotation m_playerRotation;
-
-    [SerializeField] protected float cooldown = 1f;
+    
     [SerializeField] protected Rigidbody projectile;
     [SerializeField] protected float projSpeed = 10;
-    [SerializeField] protected string[] traits;
 
     private float timer;
 
@@ -19,7 +17,6 @@ public class PlayerShooting : MonoBehaviour
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
         m_playerRotation = this.GetComponent<PlayerRotation>();
-        timer = cooldown;
     }
 
     // Update is called once per frame
@@ -27,10 +24,10 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= cooldown && m_playerRotation.aiming)
+        if (PlayerStats.player.fireRate != 0 && timer >= 1 / PlayerStats.player.fireRate && m_playerRotation.aiming)
         {
             Rigidbody bullet = Instantiate(projectile, transform.position, transform.rotation);
-            foreach (string trait in traits)
+            foreach (string trait in PlayerStats.player.traits)
             {
                 bullet.gameObject.AddComponent(System.Type.GetType(trait));
             }
