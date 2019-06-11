@@ -13,7 +13,7 @@ public class Splitting : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        speed = GetComponent<Rigidbody>().velocity.magnitude;
+        
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class Splitting : MonoBehaviour
         if (timer > splitDelay)
         {
             transform.forward = GetComponent<Rigidbody>().velocity;
+            speed = GetComponent<Rigidbody>().velocity.magnitude;
             if (splitCount == 0) return;
             if (splitCount % 2 == 1)
             {

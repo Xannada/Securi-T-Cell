@@ -5,52 +5,52 @@ using UnityEngine;
 public class Homing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
-    private float minSpeed;
     [SerializeField] protected float range = 500;
-    [SerializeField] protected float tracking = 0.05f;
+    [SerializeField] protected float tracking = 5;
+    [SerializeField] protected float delay = 1;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
-        minSpeed = FindObjectOfType<PlayerShooting>().getMinSpeed();
         //GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        foreach (GameObject enemy in enemies)
+        if (timer < delay) timer += Time.deltaTime; //Delayed homing
+        else
         {
-            Vector3 vectorToEnemy = enemy.transform.position - transform.position;
-            RaycastHit hit; 
-            bool didhit = Physics.Raycast(transform.position, vectorToEnemy, out hit);
-  //          Debug.DrawRay(transform.position, vectorToEnemy);
-//            Debug.Log(hit.collider.name);
-
-            if (didhit && hit.collider.gameObject.Equals(enemy)) // In line of sight
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject closest = null;
+            foreach (GameObject enemy in enemies)
             {
-                float distance = Vector3.Distance(enemy.transform.position, transform.position);
+                Vector3 vectorToEnemy = enemy.transform.position - transform.position;
+                RaycastHit hit;
+                bool didhit = Physics.Raycast(transform.position, vectorToEnemy, out hit);
+                //          Debug.DrawRay(transform.position, vectorToEnemy);
+                //            Debug.Log(hit.collider.name);
 
-                if (distance < range && (closest == null || distance < Vector3.Distance(closest.transform.position, transform.position)))
+                if (didhit && hit.collider.gameObject.Equals(enemy)) // In line of sight
                 {
-                    closest = enemy;
+                    float distance = Vector3.Distance(enemy.transform.position, transform.position);
+
+                    if (distance < range && (closest == null || distance < Vector3.Distance(closest.transform.position, transform.position)))
+                    {
+                        closest = enemy;
+                    }
                 }
             }
-        }
 
-        // Aim towards closest enemy
-        if (closest != null)
-        {
-            transform.forward = Vector3.Lerp(transform.forward, (closest.transform.position - transform.position).normalized, tracking + 5*Time.deltaTime).normalized;
-            m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
-        }
-
-        if (m_rigidbody.velocity.magnitude < minSpeed)
-        {
-            m_rigidbody.velocity = m_rigidbody.velocity.normalized * minSpeed;
+            // Aim towards closest enemy
+            if (closest != null)
+            {
+                transform.forward = Vector3.Lerp(m_rigidbody.velocity.normalized, (closest.transform.position - transform.position).normalized, tracking * Time.deltaTime).normalized;
+                //transform.forward = Vector3.Lerp(transform.forward, (closest.transform.position - transform.position).normalized, tracking * Time.deltaTime).normalized;
+                m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
+            }
         }
     }
 }

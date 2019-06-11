@@ -8,9 +8,8 @@ public class PlayerShooting : MonoBehaviour
     private PlayerRotation m_playerRotation;
 
     [SerializeField] protected float cooldown = 1f;
-    [SerializeField] protected float maxSpeed = 5f;
-    [SerializeField] protected float minSpeed = 1.5f;
     [SerializeField] protected Rigidbody projectile;
+    [SerializeField] protected float projSpeed = 10;
     [SerializeField] protected string[] traits;
 
     private float timer;
@@ -36,18 +35,8 @@ public class PlayerShooting : MonoBehaviour
                 bullet.gameObject.AddComponent(System.Type.GetType(trait));
             }
 
-            bullet.velocity = transform.forward * maxSpeed; // Temporary speed setter
+            bullet.velocity = transform.forward * projSpeed + GetComponent<Rigidbody>().velocity;
             timer = 0;
         }
-    }
-
-    public float getMaxSpeed()
-    {
-        return maxSpeed;
-    }
-
-    public float getMinSpeed()
-    {
-        return minSpeed;
     }
 }

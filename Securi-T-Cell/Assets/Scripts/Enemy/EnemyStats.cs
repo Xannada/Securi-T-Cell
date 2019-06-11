@@ -11,13 +11,13 @@ public class EnemyStats : MonoBehaviour
 
     public bool large = false;
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer spr_renderer;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponentInChildren<SpriteRenderer>();
+        spr_renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class EnemyStats : MonoBehaviour
         for (float t = 0; t < 150; t++)
         {
             //Debug.Log("Changing" + renderer.color + " to " + Color.Lerp(renderer.color, Color.gray, .01f));
-            renderer.color = Color.Lerp(renderer.color, Color.gray, .025f);
+            spr_renderer.color = Color.Lerp(spr_renderer.color, Color.gray, .025f);
             yield return null;
         }
     }

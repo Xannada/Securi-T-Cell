@@ -6,7 +6,6 @@ public class Bouncing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
     private Rigidbody m_player;
-    [SerializeField] protected float maxVelocity = 10f;
     [SerializeField] protected float projectileLife = 15f;
 
     // Start is called before the first frame update

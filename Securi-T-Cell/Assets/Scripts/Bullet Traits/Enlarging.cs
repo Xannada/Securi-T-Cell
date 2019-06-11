@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Enlarging : MonoBehaviour
 {
-    private Vector3 targetScale;
+    public float targetScale = 1.75f;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetScale = transform.localScale * 1.75f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.magnitude < targetScale.magnitude)
+        if (transform.localScale.magnitude < targetScale)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale * Vector3.one, Time.deltaTime);
         }
     }
 
@@ -25,7 +24,7 @@ public class Enlarging : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            targetScale = transform.localScale; //Stops growing when it hits an enemy
+            targetScale = transform.localScale.magnitude; //Stops growing when it hits an enemy
         }
         
     }

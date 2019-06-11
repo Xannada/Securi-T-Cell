@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class MaintainSpeed : MonoBehaviour
 {
-    private float maxVelocity;
     private Rigidbody m_rigidbody;
+    private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
-        maxVelocity = FindObjectOfType<PlayerShooting>().getMaxSpeed();   
+        speed = m_rigidbody.velocity.magnitude;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_rigidbody.velocity.magnitude < maxVelocity)
-            m_rigidbody.velocity = Vector3.Lerp(m_rigidbody.velocity, m_rigidbody.velocity.normalized * maxVelocity, 5*Time.deltaTime);
+        if (m_rigidbody.velocity.magnitude != speed)
+            m_rigidbody.velocity = Vector3.Lerp(m_rigidbody.velocity, m_rigidbody.velocity.normalized * speed, .5f * Time.deltaTime);
     }
 }
