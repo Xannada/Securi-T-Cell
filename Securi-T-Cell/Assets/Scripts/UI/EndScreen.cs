@@ -9,8 +9,8 @@ public class EndScreen : MonoBehaviour
     public int lossCount, winCount;
     private GameObject BasePanel;
     private GameObject WinParent, LossParent;
-
     private GameObject BacCount;
+    public static float timer = 500;
 
     void Start()
     {
@@ -22,8 +22,10 @@ public class EndScreen : MonoBehaviour
 
     void Update()
     {
+        if (Time.deltaTime > timer) timer = 0;
+        else timer -= Time.deltaTime;
         if (Time.frameCount % delayedUpdateAmount != 0) return;//do nothing and exit if not yet time to update.
-        if(BacCount.transform.childCount >= lossCount)
+        if(timer == 0 || BacCount.transform.childCount >= lossCount)
         {
             BasePanel.SetActive(true);
             LossParent.SetActive(true);
