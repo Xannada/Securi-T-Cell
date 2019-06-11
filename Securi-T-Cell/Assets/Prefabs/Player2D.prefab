@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _damage: 1
-  _fireRate: 1
+  _fireRate: 2
   _speed: 20
   _traits: []
 --- !u!114 &-8032490048266894160
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8245265547379525305, guid: fc8795ad11f203b42ba58d053b5eb256,
     type: 3}
-  projSpeed: 10
+  projSpeed: 15
 --- !u!114 &4664400397470130889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxScale: 3
   minScale: 1
+  damage: 1
   scaleIncreaseDelta: 0.5
   scaleDecreasePerSec: 0.1
 --- !u!54 &7195955519493863318

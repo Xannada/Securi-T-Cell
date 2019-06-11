@@ -19952,11 +19952,6 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8044923338269387267, guid: c554fcf4b98fcfc4382461fe144b3091,
-        type: 3}
-      propertyPath: _fireRate
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}
 --- !u!114 &8949561867781285460 stripped
