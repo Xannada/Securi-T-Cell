@@ -12,12 +12,21 @@ public class PlayerEating : MonoBehaviour
     public float scaleDecreasePerSec;
 
     private float currScale;
+    private ParticleSystem.MainModule body;
+    private Color initalColor;
 
     private float timer;
     private GameObject digesting = null;
 
+    private void Awake()
+    {
+        body = GetComponent<ParticleSystem>().main;
+    }
+
     void Start()
     {
+        initalColor = body.startColor.color;
+
         if (minScale == 0)
         {
             minScale = transform.transform.localScale.x;
@@ -40,6 +49,8 @@ public class PlayerEating : MonoBehaviour
             
             SetScale(currScale - scaleDecreasePerSec);
         }
+        
+        body.startColor = Color.Lerp(body.startColor.color, initalColor, Time.deltaTime);
     }
 
     void Eat()
@@ -92,13 +103,17 @@ public class PlayerEating : MonoBehaviour
                     Destroy(col.transform.gameObject);
                 }
             }
-            if (!target.readyToDie)
+            else
             {
-                GetComponent<PlayerMovement>().Stun();
-
                 if (!target.large)
                 {
+                    GetComponent<PlayerMovement>().Stun();
                     Destroy(col.transform.gameObject);
+                    GameObject chunks = Instantiate<GameObject>(Resources.Load("Chunks") as GameObject, target.transform.position, Quaternion.identity);
+                    chunks.transform.localScale /= 2;
+                    ParticleSystem.MainModule setting = chunks.GetComponent<ParticleSystem>().main;
+                    setting.startColor = Color.yellow;
+                    body.startColor = Color.yellow;
                 }
             }
         }

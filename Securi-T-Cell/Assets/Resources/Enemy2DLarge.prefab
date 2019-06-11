@@ -119,36 +119,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2543092672728610606, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543092672728610606, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225101090226118389, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: health
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225101090226118389, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: large
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50162529286722577, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 50162529286722577, guid: 30fca3261fb52d64b935b10ab7ea096e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4253540082210478820, guid: 30fca3261fb52d64b935b10ab7ea096e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -163,6 +133,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162529286722577, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162529286722577, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543092672728610606, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225101090226118389, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: health
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225101090226118389, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: large
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250070522636450775, guid: 30fca3261fb52d64b935b10ab7ea096e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2543092672728610602, guid: 30fca3261fb52d64b935b10ab7ea096e, type: 3}
