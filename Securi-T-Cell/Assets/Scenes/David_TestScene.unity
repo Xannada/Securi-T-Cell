@@ -14301,12 +14301,32 @@ PrefabInstance:
     - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
       propertyPath: traits.Array.data[0]
-      value: Bounce
+      value: Homing
       objectReference: {fileID: 0}
     - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
       propertyPath: traits.Array.data[1]
-      value: Homing
+      value: Bouncing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[2]
+      value: Bouncing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: traits.Array.data[3]
+      value: MaintainSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
+        type: 3}
+      propertyPath: minSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}

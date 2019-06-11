@@ -17,19 +17,16 @@ public class PlayerRotation : MonoBehaviour
 
     void faceMouse()
     {
-        if (Time.timeScale == 1f)
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            Vector3 direction = new Vector3(
-                mousePosition.x - transform.position.x, 0,
-                mousePosition.z - transform.position.z
-                );
+        Vector3 direction = new Vector3(
+        mousePosition.x - transform.position.x, 0,
+        mousePosition.z - transform.position.z
+        );
             
-            transform.forward = direction;
-            aiming = true;
-        }
+        transform.forward = direction;
+        aiming = true;
     }
 
     void faceAxis()

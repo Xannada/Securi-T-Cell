@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7195955519493863318}
   - component: {fileID: 204862264530070024}
   - component: {fileID: 1403204121622574518}
+  - component: {fileID: 4773675552789236073}
   m_Layer: 10
   m_Name: Player2D
   m_TagString: Player
@@ -78,9 +79,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
+  maxSpeed: 8
+  minSpeed: 4
   projectile: {fileID: 8245265547379525305, guid: fc8795ad11f203b42ba58d053b5eb256,
     type: 3}
   traits:
+  - Bouncing
+  - Splitting
   - Homing
 --- !u!114 &7195955519493863405
 MonoBehaviour:
@@ -111,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37b9bd35c8f294ead09fbcaa463001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScale: 5
+  maxScale: 3
   minScale: 1
   scaleIncreaseDelta: 0.5
   scaleDecreasePerSec: 0.1
@@ -4869,6 +4874,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4773675552789236073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195955519493863317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8772986323bfc36469d67bace03d6c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceRatio: 1
 --- !u!1001 &2372872746605239630
 PrefabInstance:
   m_ObjectHideFlags: 0

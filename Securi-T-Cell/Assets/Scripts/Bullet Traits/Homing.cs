@@ -5,15 +5,15 @@ using UnityEngine;
 public class Homing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
-
+    private float minSpeed;
     [SerializeField] protected float range = 500;
     [SerializeField] protected float tracking = 0.05f;
-    [SerializeField] protected float maxVelocity = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = this.GetComponent<Rigidbody>();
+        minSpeed = FindObjectOfType<PlayerShooting>().getMinSpeed();
         //GetComponent<SpriteRenderer>().color = Color.green;
     }
 
@@ -41,10 +41,16 @@ public class Homing : MonoBehaviour
             }
         }
 
-        // Move towards closest enemy
-        if (closest != null) m_rigidbody.velocity = Vector3.Lerp(m_rigidbody.velocity.normalized, closest.transform.position - transform.position, tracking);
+        // Aim towards closest enemy
+        if (closest != null)
+        {
+            transform.forward = Vector3.Lerp(transform.forward, (closest.transform.position - transform.position).normalized, tracking + 5*Time.deltaTime).normalized;
+            m_rigidbody.velocity = transform.forward * m_rigidbody.velocity.magnitude;
+        }
 
-        // Check max velocity
-        m_rigidbody.velocity = m_rigidbody.velocity.normalized * Mathf.Max(m_rigidbody.velocity.magnitude, maxVelocity);
+        if (m_rigidbody.velocity.magnitude < minSpeed)
+        {
+            m_rigidbody.velocity = m_rigidbody.velocity.normalized * minSpeed;
+        }
     }
 }

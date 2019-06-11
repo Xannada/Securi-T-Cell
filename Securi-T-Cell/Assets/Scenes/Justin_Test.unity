@@ -146,7 +146,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69763630}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: db88596f54847de4d919e0bcc5bfe56e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -681,25 +681,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8275703489142937894, guid: c554fcf4b98fcfc4382461fe144b3091,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
       propertyPath: traits.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
-        type: 3}
-      propertyPath: traits.Array.data[0]
-      value: Splitting
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521749952783606135, guid: c554fcf4b98fcfc4382461fe144b3091,
+    - target: {fileID: 3291161876484728225, guid: c554fcf4b98fcfc4382461fe144b3091,
         type: 3}
       propertyPath: traits.Array.data[1]
-      value: Homing
+      value: Bouncing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}

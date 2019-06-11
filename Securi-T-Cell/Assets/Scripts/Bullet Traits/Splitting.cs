@@ -22,6 +22,7 @@ public class Splitting : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > splitDelay)
         {
+            transform.forward = GetComponent<Rigidbody>().velocity;
             if (splitCount == 0) return;
             if (splitCount % 2 == 1)
             {

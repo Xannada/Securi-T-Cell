@@ -72,16 +72,18 @@ public class PlayerEating : MonoBehaviour
         {
             EnemyStats target = col.transform.GetComponent<EnemyStats>();
 
-            if (!digesting && target.readyToDie)
+            if (target.readyToDie)
             {
                 if (!target.large)
                 { 
-                    
-                    digesting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
-                    digesting.GetComponentInChildren<SpriteRenderer>().color = target.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
-                    digesting.transform.localPosition = Vector3.up * 2;
-                    Eat();
-                    Destroy(col.transform.gameObject);
+                    if (!digesting)
+                    {
+                        digesting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
+                        digesting.GetComponentInChildren<SpriteRenderer>().color = target.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
+                        digesting.transform.localPosition = Vector3.up * 2;
+                        Eat();
+                        Destroy(col.transform.gameObject);
+                    }
                 }
                 else
                 {
@@ -93,6 +95,11 @@ public class PlayerEating : MonoBehaviour
             if (!target.readyToDie)
             {
                 GetComponent<PlayerMovement>().Stun();
+
+                if (!target.large)
+                {
+                    Destroy(col.transform.gameObject);
+                }
             }
         }
     }
