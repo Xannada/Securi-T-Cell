@@ -32,7 +32,7 @@ public class PlayerShooting : MonoBehaviour
                 bullet.gameObject.AddComponent(System.Type.GetType(trait));
             }
 
-            bullet.velocity = transform.forward * projSpeed + GetComponent<Rigidbody>().velocity;
+            bullet.velocity = transform.forward * projSpeed + GetComponent<Rigidbody>().velocity * 0.7f;
             timer = 0;
         }
     }
