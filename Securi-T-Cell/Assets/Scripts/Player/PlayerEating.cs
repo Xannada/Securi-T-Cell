@@ -87,12 +87,11 @@ public class PlayerEating : MonoBehaviour
 
             if (target.readyToDie)
             {
-                GetComponent<Upgrader>().GainUpgradePoint();
-                
                 if (!target.large)
                 { 
                     if (!digesting)
                     {
+                        GetComponent<Upgrader>().GainUpgradePoint();
                         digesting = Instantiate(Resources.Load("GenericCell"), transform) as GameObject;
                         digesting.GetComponentInChildren<SpriteRenderer>().color = target.GetComponentInChildren<SpriteRenderer>().color - new Color(0, 0, 0, .5f);
                         digesting.transform.localPosition = Vector3.up * 2;
@@ -103,6 +102,7 @@ public class PlayerEating : MonoBehaviour
                 }
                 else
                 {
+                    GetComponent<Upgrader>().GainUpgradePoint();
                     target.GetComponent<BigEnemyMovement>().respawn();
                     Instantiate(Resources.Load("Chunks"), target.transform.position, Quaternion.identity);
                     Destroy(col.transform.gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enlarging : MonoBehaviour
 {
-    public float targetScale = 5f;
+    public float targetScale = 4f;
 
     // Start is called before the first frame update
     void Start()

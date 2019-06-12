@@ -6,7 +6,7 @@ public class Homing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
     [SerializeField] protected float range = 500;
-    [SerializeField] protected float tracking = 15;
+    [SerializeField] protected float tracking = 10;
     [SerializeField] protected float delay = .5f;
     private float timer = 0;
 

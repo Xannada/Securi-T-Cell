@@ -34,6 +34,23 @@ public class Upgrader : MonoBehaviour
         stats.Add("FireRate");*/
     }
 
+    public void Update()
+    {
+        if (upgradeWindow.activeSelf)
+        {
+            float input = Input.GetAxis("Selection");
+
+            if (input == 1)
+            {
+                rightButtonClicked();
+            }
+            else if (input == -1)
+            {
+                LeftButtonClicked();
+            }
+        }
+    }
+
     public void GainUpgradePoint()
     {
         upgradeIndex++;
