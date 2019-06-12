@@ -794,7 +794,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58549542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &58549542
@@ -5092,6 +5103,29 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8848230726837673396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &463475102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463475101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9050363a654c55f43b437fba50ea8bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeWindow: {fileID: 532489364}
+  leftButton: {fileID: 58549541}
+  rightButton: {fileID: 1150134167}
+  playerStats: {fileID: 8848230726837673397}
+  traits:
+  - Bouncing
+  - Enlarging
+  - Homing
+  - MaintainSpeed
+  - Splitting
+  upgradeInterval: 3
 --- !u!1 &469589089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,7 +5528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &532489365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21206,6 +21240,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c554fcf4b98fcfc4382461fe144b3091, type: 3}
+--- !u!114 &8848230726837673397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8044923338269387267, guid: c554fcf4b98fcfc4382461fe144b3091,
+    type: 3}
+  m_PrefabInstance: {fileID: 8848230726837673396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463475101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c48bfce3a51f04f9b9fd37df3e9d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8949561867781285460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8949561867781285460, guid: 6d8101162a1b8b546b13bb02b4d94c53,

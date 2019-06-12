@@ -6,8 +6,8 @@ public class Homing : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
     [SerializeField] protected float range = 500;
-    [SerializeField] protected float tracking = 5;
-    [SerializeField] protected float delay = 1;
+    [SerializeField] protected float tracking = 15;
+    [SerializeField] protected float delay = .5f;
     private float timer = 0;
 
     // Start is called before the first frame update

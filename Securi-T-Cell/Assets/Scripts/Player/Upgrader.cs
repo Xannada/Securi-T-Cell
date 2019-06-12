@@ -1,24 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Upgrader : MonoBehaviour
 {
+    public GameObject upgradeWindow;
+    public Button leftButton;
+    public Button rightButton;
+
+    public PlayerStats playerStats;
+
     public List<string> traits;
 
     private List<string> stats;
+
+    private List<string> upgrades;
 
     public int upgradeInterval = 3;
 
     private int upgradeIndex = 0;
 
 
+
+
     void Awake()
     {
-        stats = new List<string>();
+        leftButton.onClick.AddListener(LeftButtonClicked);
+        rightButton.onClick.AddListener(rightButtonClicked);
+        /*stats = new List<string>();
         stats.Add("Health");
         stats.Add("Speed");
-        stats.Add("FireRate");
+        stats.Add("FireRate");*/
     }
 
     public void GainUpgradePoint()
@@ -27,15 +40,41 @@ public class Upgrader : MonoBehaviour
 
         if (upgradeIndex % upgradeInterval == 0)
         {
-            List<string> upgrades = GetTwoTraits();
+            upgrades = GetTwoTraits();
             if (upgrades != null)
                 Upgrade(upgrades);
         }
     }
 
+    public void LeftButtonClicked()
+    {
+        playerStats.addTrait(upgrades[0]);
+        traits.Remove(upgrades[0]);
+        clearUI();
+    }
+
+    public void rightButtonClicked()
+    {
+        playerStats.addTrait(upgrades[1]);
+        traits.Remove(upgrades[1]);
+        clearUI();
+    }
+
+    private void clearUI()
+    {
+        upgradeWindow.SetActive(false);
+        Time.timeScale = 1f;
+
+        upgrades = null;
+    }
+
     private void Upgrade(List<string> upgrades)
     {
+        upgradeWindow.SetActive(true);
+        Time.timeScale = 0f;
 
+        leftButton.image.sprite = Resources.Load<Sprite>(upgrades[0]);
+        rightButton.image.sprite = Resources.Load<Sprite>(upgrades[1]);
     }
 
 
@@ -59,6 +98,8 @@ public class Upgrader : MonoBehaviour
         result.Add(traits[random]);
 
         traits.RemoveAt(random);
+
+        traits.AddRange(result);
 
         return result;
     }

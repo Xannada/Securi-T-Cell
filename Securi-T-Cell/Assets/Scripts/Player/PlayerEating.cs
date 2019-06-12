@@ -87,6 +87,8 @@ public class PlayerEating : MonoBehaviour
 
             if (target.readyToDie)
             {
+                GetComponent<Upgrader>().GainUpgradePoint();
+                
                 if (!target.large)
                 { 
                     if (!digesting)

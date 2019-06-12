@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Splitting : MonoBehaviour
 {
-    public float splitDelay = 1;
+    public float splitDelay = .25f;
     private float timer = 0;
     public float splitAngle = 30;
     public float splitCount = 4;
