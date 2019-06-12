@@ -9,4 +9,9 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void OpenURL()
+    {
+        Application.OpenURL("https://www.vaccines.gov/basics");
+    }
 }
