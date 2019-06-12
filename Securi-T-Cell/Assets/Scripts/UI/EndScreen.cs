@@ -25,11 +25,11 @@ public class EndScreen : MonoBehaviour
         if (Time.deltaTime > timer) timer = 0;
         else timer -= Time.deltaTime;
         if (Time.frameCount % delayedUpdateAmount != 0) return;//do nothing and exit if not yet time to update.
-        if(timer == 0 || BacCount.transform.childCount >= lossCount)
+        if(BacCount.transform.childCount >= lossCount)
         {
             BasePanel.SetActive(true);
             LossParent.SetActive(true);
-        }else if(BacCount.transform.childCount <= winCount)
+        }else if(timer == 0 || BacCount.transform.childCount <= winCount)
         {
             BasePanel.SetActive(true);
             WinParent.SetActive(true);
