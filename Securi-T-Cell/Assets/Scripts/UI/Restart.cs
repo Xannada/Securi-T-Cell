@@ -7,6 +7,11 @@ public class Restart : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("Playtest_1");
+        SceneManager.LoadScene(0);
+    }
+
+    public void OpenURL()
+    {
+        Application.OpenURL("https://www.vaccines.gov/basics");
     }
 }
